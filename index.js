@@ -1,9 +1,12 @@
-generateMarkdown = require('./assets/generateREADME.js');
+// Check the markdown generating script
+generateMarkdown = require('./assets/generateMarkdown.js');
 
+// Check for the  dependencies installed
 const fs = require("fs");
 const inquirer = require("inquirer");
 const axios = require("axios");
 
+// Get user details from GitHub
 function getUser(userName) {
     return axios
         .get(
@@ -15,7 +18,8 @@ function getUser(userName) {
         });
 }
 
-function askUser() {
+// Ask for project details for README file
+function userInputs() {
     inquirer
         .prompt([{
             type: "input",
@@ -73,21 +77,24 @@ function askUser() {
             name: "projectLicense",
         }
         ])
+
+        // Get user avatar and generate markdown (without creating a README file)
         .then((inquirerResponses) => {
-            responses = inquirerResponses
             getUser(inquirerResponses.userName)
                 .then((githubResponse) => {
-                    // console.log(githubResponse.data.avatar_url);
+                    // Add user avatar to project details
                     inquirerResponses.avatarURL = githubResponse.data.avatar_url
-                    let generatedReadme = generateMarkdown(inquirerResponses);
-                    writeToFile('README.md', generatedReadme);
+                    // Parse the README details to create markdown version
+                    let markdownReadme = generateMarkdown(inquirerResponses);
+                    // Parse the markdown README version to write it to file
+                    writeToFile('README.md', markdownReadme);
                 })
         })
 
 }
 
+// Create a README file from README with markdown
 function writeToFile(file, data) {
-    // use package fs 
     fs.writeFile(file, data, function (err) {
         if (err) {
             return console.log(err);
@@ -96,4 +103,4 @@ function writeToFile(file, data) {
     })
 }
 
-askUser()
+userInputs()
