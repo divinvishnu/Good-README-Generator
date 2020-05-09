@@ -8,8 +8,9 @@
   [issues-shield]: https://img.shields.io/github/issues/yours-kkuznets/Good-README-Generator.svg?style=flat-square
   [issues-url]: https://github.com/yours-kkuznets/Good-README-Generator/issues
   [license-shield]: https://img.shields.io/github/license/yours-kkuznets/Good-README-Generator.svg?style=flat-square
+  [license-url]: https://github.com/yours-kkuznets/Good-README-Generator/blob/master/LICENSE.txt
 
-  [![Contributors][contributors-shield]][contributors-url] [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url] [![Issues][issues-shield]][issues-url] [![License][license-shield]][license-url]
+  [![Contributors][contributors-shield]][contributors-url] [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url] [![Issues][issues-shield]][issues-url] [![License.txt][license-shield]][license-url]
 
   # Good-README-Generator
 
@@ -19,16 +20,17 @@
   - [Title](#title)
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
+  - [Screenshots](#screenshots)
   - [Installation](#installation)
   - [Usage](#usage)
+  - [Testing](#testing)
   - [Additional Information](#additional-information)
-  - [Testing](#tests)
-  - [Questions](#questions)
-  - [Contributing](#contributing)
   - [License](#license)
-  - [Authors](#authors)
-  - [Contributors](#contributors)
-  - [Acknowledgments](#acknowledgments)
+  - [Contributing](#contributing)
+  - [Questions and Feedback](#questions-and-feedback)
+
+  ## Screenshots
+  <img src="assets/img/screenshot.png" alt="Good-README-Generator"/>
 
   ## Installation
   Download (and unpack) or clone the repo, then using a CLI run the `npm install` command.
@@ -40,7 +42,7 @@
   Run the tests with the CLI command `npm test`.
 
   ## Additional Information
-  User needs to know
+  No info
 
   ## License
   This project is licensed under the MIT License - see the [LICENSE.txt](https://github.com/yours-kkuznets/Wheather-Forecast/blob/master/LICENSE.txt) file for details
@@ -50,6 +52,6 @@
 
   ## Questions and Feedback
   Please contact me using one of the following:
-  - Github: [<img src="https://avatars3.githubusercontent.com/u/60260298?v=4" height="100" width="100" alt="yours-kkuznets"/>](https://gist.github.com/yours-kkuznets) 
+  - Github: [<img src="https://avatars3.githubusercontent.com/u/60260298?v=4" height="30" width="30" alt="yours-kkuznets"/>](https://gist.github.com/yours-kkuznets) 
   - Email: yours.kkuznets@gmail.com
   
