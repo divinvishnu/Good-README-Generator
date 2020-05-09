@@ -93,7 +93,7 @@ function userInputs() {
 
 }
 
-// Create a README file from README with markdown
+// Create a README file from markdown README version
 function writeToFile(file, data) {
     fs.writeFile(file, data, function (err) {
         if (err) {
