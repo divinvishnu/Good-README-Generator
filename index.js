@@ -40,7 +40,7 @@ function askUser() {
         {
             type: "input",
             message: "What is the path for this project's screenshot?",
-            default: "assets/img/screenshot.png",
+            default: "assets/img/screenshot.gif",
             name: "projectImgSRC",
         },
         {
@@ -68,7 +68,8 @@ function askUser() {
         },
         {
             type: "input",
-            message: "Please input an appropriate license for this project",
+            message: "Please input an appropriate license type for this project",
+            default: "MIT",
             name: "projectLicense",
         }
         ])
