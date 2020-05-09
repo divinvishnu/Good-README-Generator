@@ -63,5 +63,5 @@ Please read [CONTRIBUTING.md](https://github.com/yours-kkuznets/Good-README-Gene
 
 Please contact me using one of the following:
 
-- Github: [yours-kkuznets](https://gist.github.com/yours-kkuznets) - [<img src="https://avatars3.githubusercontent.com/u/60260298?v=4" height="30" width="30" alt="yours-kkuznets"/>](https://gist.github.com/yours-kkuznets)
+- Github: [yours-kkuznets](https://gist.github.com/yours-kkuznets) - [<img src="https://avatars3.githubusercontent.com/u/60260298?v=4" height="30" width="30" style="vertical-align: middle;" alt="yours-kkuznets"/>](https://gist.github.com/yours-kkuznets)
 - Email: yours.kkuznets@gmail.com
