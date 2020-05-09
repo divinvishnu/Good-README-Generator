@@ -1,10 +1,8 @@
-generateMarkdown = require('./utils/generateMarkdown.js');
+generateMarkdown = require('./assets/generateREADME.js');
 
 const fs = require("fs");
 const inquirer = require("inquirer");
 const axios = require("axios");
-
-let responses = {};
 
 function getUser(userName) {
     return axios
@@ -26,80 +24,61 @@ function askUser() {
         },
         {
             type: "input",
-            message: "What is your Github email address?",
+            message: "What is your email address?",
             name: "userEmail",
         },
         {
             type: "input",
             message: "What is your project title?",
-            default: "Project title goes here",
             name: "projectTitle",
         },
         {
             type: "input",
-            message: "What is your description for the project?",
-            default: "A description is ideally one sentence. Also, include any terms or tags that can be searched.",
-            name: "description",
+            message: "What is the description of this project?",
+            name: "projectDescription",
         },
         {
             type: "input",
-            message: "Any links to screenshots or gifs to project, please enter link here",
-            name: "screenshotsOrGifs",
-        },
-        {
-            type: "input",
-            message: "What is the main purpose for usage of this project?",
-            name: "usage",
-        },
-        {
-            type: "input",
-            message: "Please input an appropriate license for this project",
-            name: "license",
-        },
-        {
-            type: "input",
-            message: "Please list contributors of this project.",
-            name: "contributors",
+            message: "What is the path for this project's screenshot?",
+            default: "assets/img/screenshot.png",
+            name: "projectImgSRC",
         },
         {
             type: "input",
             message: "What command should be run to install dependencies?",
-            default: "npm install",
-            name: "testInstall",
+            default: "`npm install`",
+            name: "projectInstall",
         },
         {
             type: "input",
-            message: "What command should be run to run tests?",
-            default: "npm test",
-            name: "testConduct",
+            message: "What command should be run to run the program?",
+            default: "`node index.js`",
+            name: "projectRun",
         },
         {
             type: "input",
-            message: "What does the user need to know above using the repo?",
-            name: "userToKnow",
+            message: "What command should be run to start tests?",
+            default: "`npm test`",
+            name: "projectTest",
         },
         {
             type: "input",
-            message: "What does the user need to know about contributing to the repo?",
-            name: "userContributeToKnow",
+            message: "Any additional information about the project?",
+            name: "projectInfo",
         },
         {
             type: "input",
-            message: "Please enter copyright year and name.",
-            name: "copyright",
+            message: "Please input an appropriate license for this project",
+            name: "projectLicense",
         }
         ])
         .then((inquirerResponses) => {
-            console.log(inquirerResponses)
             responses = inquirerResponses
-            getUser(inquirerResponses.name)
+            getUser(inquirerResponses.userName)
                 .then((githubResponse) => {
-                    console.log(githubResponse);
                     // console.log(githubResponse.data.avatar_url);
-                    responses.userEmail = githubResponse.data.userEmail
-                    responses.avatar_url = githubResponse.data.avatar_url
-                    console.log(responses);
-                    var generatedReadme = generateMarkdown(responses);
+                    inquirerResponses.avatarURL = githubResponse.data.avatar_url
+                    let generatedReadme = generateMarkdown(inquirerResponses);
                     writeToFile('README.md', generatedReadme);
                 })
         })
@@ -116,11 +95,4 @@ function writeToFile(file, data) {
     })
 }
 
-function firstThing() {
-    const userResponse = askUser();
-    const generatedReadme = generateReadme(userResponse);
-    writeToFile('README.md', generatedReadme);
-}
-
-//firstThing();
 askUser()
