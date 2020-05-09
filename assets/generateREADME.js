@@ -1,4 +1,4 @@
-function generateREADME({ userName, userEmail, projectTitle, projectDescription, projectInstall, projectRun, projectTest, projectInfo, projectLicense, avatarURL }) {
+function generateREADME({ userName, userEmail, projectTitle, projectDescription, projectImgSRC, projectInstall, projectRun, projectTest, projectInfo, projectLicense, avatarURL }) {
 
   return `
   [contributors-shield]: https://img.shields.io/github/contributors/${userName}/${projectTitle}.svg?style=flat-square
@@ -10,8 +10,9 @@ function generateREADME({ userName, userEmail, projectTitle, projectDescription,
   [issues-shield]: https://img.shields.io/github/issues/${userName}/${projectTitle}.svg?style=flat-square
   [issues-url]: https://github.com/${userName}/${projectTitle}/issues
   [license-shield]: https://img.shields.io/github/license/${userName}/${projectTitle}.svg?style=flat-square
+  [license-url]: https://github.com/${userName}/${projectTitle}/blob/master/LICENSE.txt
 
-  [![Contributors][contributors-shield]][contributors-url] [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url] [![Issues][issues-shield]][issues-url] [![License][license-shield]][license-url]
+  [![Contributors][contributors-shield]][contributors-url] [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url] [![Issues][issues-shield]][issues-url] [![License.txt][license-shield]][license-url]
 
   # ${projectTitle}
 
@@ -21,16 +22,17 @@ function generateREADME({ userName, userEmail, projectTitle, projectDescription,
   - [Title](#title)
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
+  - [Screenshots](#screenshots)
   - [Installation](#installation)
   - [Usage](#usage)
+  - [Testing](#testing)
   - [Additional Information](#additional-information)
-  - [Testing](#tests)
-  - [Questions](#questions)
-  - [Contributing](#contributing)
   - [License](#license)
-  - [Authors](#authors)
-  - [Contributors](#contributors)
-  - [Acknowledgments](#acknowledgments)
+  - [Contributing](#contributing)
+  - [Questions and Feedback](#questions-and-feedback)
+
+  ## Screenshots
+  <img src="${projectImgSRC}" alt="${projectTitle}"/>
 
   ## Installation
   Download (and unpack) or clone the repo, then using a CLI run the ${projectInstall} command.
@@ -52,7 +54,7 @@ function generateREADME({ userName, userEmail, projectTitle, projectDescription,
 
   ## Questions and Feedback
   Please contact me using one of the following:
-  - Github: [<img src="${avatarURL}" height="100" width="100" alt="${userName}"/>](https://gist.github.com/${userName}) 
+  - Github: [<img src="${avatarURL}" height="30" width="30" alt="${userName}"/>](https://gist.github.com/${userName}) 
   - Email: ${userEmail}
   `
 }
