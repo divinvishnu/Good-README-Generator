@@ -1,5 +1,5 @@
 // Check the markdown generating script
-generateMarkdown = require('./assets/generateMarkdown.js');
+generateMarkdown = require('./assets/js/generateMarkdown.js');
 
 // Check for the  dependencies installed
 const fs = require("fs");
