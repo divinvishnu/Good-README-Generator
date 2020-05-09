@@ -1,4 +1,5 @@
-function generateREADME({ userName, userEmail, projectTitle, projectDescription, projectImgSRC, projectInstall, projectRun, projectTest, projectInfo, projectLicense, avatarURL }) {
+// Generate README with structure and markdown based on the user inputs
+function generateMarkdown({ userName, userEmail, projectTitle, projectDescription, projectImgSRC, projectInstall, projectRun, projectTest, projectInfo, projectLicense, avatarURL }) {
   projectTitleDashed = projectTitle.replace(/\s+/g, '-');
   return `
   [contributors-shield]: https://img.shields.io/github/contributors/${userName}/${projectTitleDashed}.svg?style=flat-square
@@ -62,4 +63,5 @@ function generateREADME({ userName, userEmail, projectTitle, projectDescription,
   `
 }
 
-module.exports = generateREADME;
+// Parse the markdown README
+module.exports = generateMarkdown;
